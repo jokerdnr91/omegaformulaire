@@ -114,8 +114,7 @@ button {
 
 <!-- ACCUEIL -->
 <div id="accueil" class="page active hero">
-    <h1>Transforme ton corps et ton mindset </h1>
-    <p> </p>
+    <h1>Transforme ton corps et ton mindset</h1>
 </div>
 
 <!-- OFFRE -->
@@ -124,9 +123,11 @@ button {
 
     <div class="cards">
         <div class="card" onclick="showPage('formulaire')">
-            <h2> coaching personnalisé </h2>
+            <h2>Coaching personnalisé</h2>
             <p>30€/mois</p>
         </div>
+    </div>
+</div>
 
 <!-- FORMULAIRE -->
 <div id="formulaire" class="page">
@@ -208,7 +209,7 @@ button {
 <input type="text" placeholder="Métier">
 <input type="text" placeholder="Heures de sommeil">
 <select>
-<option>Qualité sommeil</option>
+<option>Qualité du sommeil</option>
 <option>Bonne</option>
 <option>Moyenne</option>
 <option>Mauvaise</option>
@@ -247,7 +248,7 @@ button {
 <textarea placeholder="Pourquoi abandon ?"></textarea>
 <textarea placeholder="Motivation principale"></textarea>
 <select>
-<option>Besoin motivation ?</option>
+<option>Besoin de motivation ?</option>
 <option>Oui</option>
 <option>Non</option>
 </select>
@@ -255,12 +256,12 @@ button {
 
 <h2>Suivi physique</h2>
 <select>
-<option>Envoyer photos ?</option>
+<option>Envoyer des photos ?</option>
 <option>Oui</option>
 <option>Non</option>
 </select>
 <select>
-<option>Se peser ?</option>
+<option>Se peser régulièrement ?</option>
 <option>Oui</option>
 <option>Non</option>
 </select>
@@ -278,7 +279,6 @@ function showPage(pageId) {
 
 document.getElementById("coachingForm").addEventListener("submit", function(e) {
     e.preventDefault();
-
     window.location.href = "mailto:OMEGAFIT75@proton.me";
 });
 </script>
