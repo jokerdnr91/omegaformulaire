@@ -1,0 +1,76 @@
+{
+  "client": {
+    "informations_personnelles": {
+      "nom_prenom": "",
+      "age": "",
+      "sexe": "",
+      "email": "",
+      "telephone": ""
+    },
+
+    "objectifs": {
+      "objectif_principal": "",
+      "raison_objectif": "",
+      "echeance": "",
+      "motivation": ""
+    },
+
+    "niveau_experience": {
+      "a_deja_fait_du_sport": "",
+      "sport_pratique": "",
+      "duree_pratique": "",
+      "frequence_semaine": "",
+      "niveau": ""
+    },
+
+    "sante": {
+      "blessures_actuelles": "",
+      "anciennes_blessures": "",
+      "handicap": "",
+      "douleurs_regulieres": ""
+    },
+
+    "nutrition": {
+      "regime": "",
+      "allergies": "",
+      "intolerances": "",
+      "alimentation_actuelle": "",
+      "repas_par_jour": "",
+      "grignotage": "",
+      "alcool": "",
+      "hydratation": ""
+    },
+
+    "mode_de_vie": {
+      "metier": "",
+      "heures_sommeil": "",
+      "qualite_sommeil": "",
+      "stress": "",
+      "horaires_irreguliers": ""
+    },
+
+    "disponibilites": {
+      "seances_par_semaine": "",
+      "duree_seance": "",
+      "lieu_entrainement": "",
+      "materiel": ""
+    },
+
+    "budget_engagement": {
+      "budget_mensuel": "",
+      "engagement": "",
+      "type_suivi": ""
+    },
+
+    "mental_suivi": {
+      "abandon_passe": "",
+      "motivation_principale": "",
+      "besoin_motivation": "",
+      "type_contact": ""
+    },
+
+    "message_libre": {
+      "message": ""
+    }
+  }
+}
