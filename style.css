@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Ghost Coaching</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">GHOST COACHING</div>
+
+    <div class="menu">
+        <a onclick="showPage('accueil')">Accueil</a>
+        <a onclick="showPage('offre')">Offre</a>
+        <a onclick="showPage('resultats')">Résultats</a>
+    </div>
+</nav>
+
+<!-- ACCUEIL -->
+<div id="accueil" class="page active hero">
+    <h1>Transformer votre corps</h1>
+    <p>Coaching personnalisé haut de gamme</p>
+</div>
+
+<!-- OFFRE -->
+<div id="offre" class="page">
+    <h1>Choisissez votre offre</h1>
+
+    <div class="cards">
+        <div class="card" onclick="showPage('formulaire')">
+            <h2>Suivi Basique</h2>
+            <p>30€/mois</p>
+        </div>
+
+        <div class="card" onclick="showPage('formulaire')">
+            <h2>Suivi Premium</h2>
+            <p>50€/mois</p>
+        </div>
+    </div>
+</div>
+
+<!-- FORMULAIRE -->
+<div id="formulaire" class="page">
+    <h1>Commencer le coaching</h1>
+
+    <form id="coachingForm">
+
+        <h2>Informations personnelles</h2>
+        <input type="text" placeholder="Nom / Prénom" required>
+        <input type="number" placeholder="Âge">
+
+        <select>
+            <option>Sexe</option>
+            <option>Homme</option>
+            <option>Femme</option>
+        </select>
+
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Téléphone (optionnel)">
+
+        <h2>Objectifs</h2>
+        <select>
+            <option>Objectif principal</option>
+            <option>Perte de poids</option>
+            <option>Prise de masse</option>
+            <option>Remise en forme</option>
+        </select>
+
+        <textarea placeholder="Pourquoi cet objectif ?"></textarea>
+        <input type="text" placeholder="Échéance">
+        <input type="number" min="1" max="10" placeholder="Motivation (1 à 10)">
+
+        <h2>Santé</h2>
+        <textarea placeholder="Blessures actuelles"></textarea>
+
+        <h2>Message libre</h2>
+        <textarea placeholder="Ajoute une info importante"></textarea>
+
+        <button type="submit">Envoyer</button>
+
+    </form>
+</div>
+
+<!-- RESULTATS -->
+<div id="resultats" class="page">
+    <h1>Résultats</h1>
+    <p>Transformations clients à venir</p>
+</div>
+
+<script>
+function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+}
+
+// ENVOI VIA GMAIL (mailto)
+document.getElementById("coachingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const nom = this[0].value;
+    const age = this[1].value;
+    const sexe = this[2].value;
+    const email = this[3].value;
+    const tel = this[4].value;
+    const objectif = this[5].value;
+    const pourquoi = this[6].value;
+    const echeance = this[7].value;
+    const motivation = this[8].value;
+    const blessures = this[9].value;
+    const message = this[10].value;
+
+    const body = `
+Nom: ${nom}
+Age: ${age}
+Sexe: ${sexe}
+Email: ${email}
+Téléphone: ${tel}
+
+Objectif: ${objectif}
+Pourquoi: ${pourquoi}
+Échéance: ${echeance}
+Motivation: ${motivation}
+
+Blessures: ${blessures}
+
+Message: ${message}
+    `;
+
+    const mailto = `mailto:TONEMAIL@gmail.com?subject=Nouvelle demande coaching&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
+});
+</script>
+
+</body>
+</html>
