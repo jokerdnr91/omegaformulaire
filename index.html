@@ -214,10 +214,22 @@ function showPage(pageId) {
 
 function goForm() {
     showPage('formulaire');
-}
-
 document.getElementById("coachingForm").addEventListener("submit", function(e) {
     e.preventDefault();
+
+    const nom = this[0].value;
+    const email = this[1].value;
+    const objectif = this[2].value;
+    const poids = this[3].value;
+    const blessures = this[4].value;
+
+    const body = `
+Nom: ${nom}
+Email: ${email}
+Objectif: ${objectif}
+Poids: ${poids}
+Blessures: ${blessures}
+    `;
 
     window.location.href =
     `mailto:TONEMAIL@gmail.com?subject=Coaching Ghost&body=${encodeURIComponent(body)}`;
