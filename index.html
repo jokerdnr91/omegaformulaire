@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Coaching Ghost</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0a0a0a;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    background: black;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* MENU */
+.menu {
+    position: relative;
+}
+
+.menu button {
+    background: red;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: #111;
+    min-width: 150px;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    background: red;
+}
+
+/* SHOW MENU */
+.menu:hover .dropdown {
+    display: block;
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(black, #300000);
+}
+
+h1 {
+    color: red;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+/* FORM */
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+}
+
+button.submit {
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+}
+
+/* RESULTS */
+.results img {
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">GHOST COACHING</div>
+
+    <div class="menu">
+        <button>Menu ▼</button>
+        <div class="dropdown">
+            <a href="#accueil">Accueil</a>
+            <a href="#offre">Offre</a>
+            <a href="#formulaire">Formulaire</a>
+            <a href="#resultats">Résultats</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ACCUEIL -->
+<section id="accueil" class="hero">
+    <h1>Transforme ton corps</h1>
+    <p>Coaching personnalisé haut de gamme</p>
+</section>
+
+<!-- OFFRE -->
+<section id="offre">
+    <h1>Mes Offres</h1>
+    <div class="cards">
+        <div class="card">
+            <h3>Basic</h3>
+            <p>Programme simple</p>
+            <p>30€/mois</p>
+        </div>
+
+        <div class="card">
+            <h3>Premium</h3>
+            <p>Suivi complet</p>
+            <p>50€/mois</p>
+        </div>
+    </div>
+</section>
+
+<!-- FORMULAIRE -->
+<section id="formulaire">
+    <h1>Commencer</h1>
+
+    <form>
+        <input type="text" placeholder="Nom / Prénom"><br>
+        <input type="email" placeholder="Email"><br>
+        <input type="text" placeholder="Objectif"><br>
+        <input type="text" placeholder="Poids / Taille"><br>
+        <textarea placeholder="Blessures / Infos"></textarea><br>
+
+        <button class="submit">Envoyer</button>
+    </form>
+</section>
+
+<!-- RESULTATS -->
+<section id="resultats" class="results">
+    <h1>Résultats</h1>
+
+    <img src="https://via.placeholder.com/200" alt="">
+    <img src="https://via.placeholder.com/200" alt="">
+    <img src="https://via.placeholder.com/200" alt="">
+</section>
+
+</body>
+</html>
