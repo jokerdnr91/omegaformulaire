@@ -5,7 +5,6 @@
 <title> Ω OMEGAFIT Ω </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
@@ -17,7 +16,6 @@ body {
     overflow: hidden;
 }
 
-/* NAVBAR */
 nav {
     position: fixed;
     width: 100%;
@@ -33,7 +31,6 @@ nav {
     color: #ff0000;
     font-weight: 700;
     font-size: 20px;
-    letter-spacing: 2px;
 }
 
 .menu {
@@ -43,40 +40,20 @@ nav {
 .menu a {
     margin-right: 25px;
     cursor: pointer;
-    position: relative;
 }
 
-.menu a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background: red;
-    left: 0;
-    bottom: -5px;
-    transition: 0.3s;
-}
-
-.menu a:hover::after {
-    width: 100%;
-}
-
-/* PAGES */
 .page {
     display: none;
     height: 100vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    text-align: center;
-    padding: 20px;
 }
 
 .active {
     display: flex;
 }
 
-/* HERO */
 .hero {
     background: linear-gradient(to bottom, #000, #300000);
 }
@@ -84,11 +61,6 @@ nav {
 .hero h1 {
     font-size: 50px;
     color: red;
-    animation: fadeUp 1s ease;
-}
-
-.hero p {
-    opacity: 0.8;
 }
 
 /* OFFRES */
@@ -101,14 +73,7 @@ nav {
     background: #111;
     padding: 40px;
     border-radius: 15px;
-    width: 260px;
-    transition: 0.4s;
     cursor: pointer;
-}
-
-.card:hover {
-    transform: translateY(-10px) scale(1.03);
-    background: linear-gradient(135deg, #ff0000, #300000);
 }
 
 /* FORM */
@@ -127,47 +92,12 @@ input, textarea {
     color: white;
 }
 
-input:focus, textarea:focus {
-    outline: 2px solid red;
-}
-
-/* BUTTON */
 button {
     width: 100%;
     padding: 14px;
     background: red;
     border: none;
     border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #ff3333;
-}
-
-/* ANIMATION */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .cards {
-        flex-direction: column;
-    }
 }
 </style>
 </head>
@@ -190,30 +120,49 @@ button:hover {
 
 <!-- OFFRE -->
 <div id="offre" class="page">
-    <h1>coaching en salle </h1>
+    <h1>Coaching en salle</h1>
 
     <div class="cards">
         <div class="card" onclick="goForm()">
-            <h2>coaching </h2>
+            <h2>Coaching</h2>
             <p>30€/mois</p>
         </div>
     </div>
 </div>
 
+<!-- FORMULAIRE -->
+<div id="formulaire" class="page">
+    <h1>Commencer</h1>
+
+    <form id="coachingForm">
+        <input type="text" placeholder="Nom / Prénom" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Objectif">
+        <input type="text" placeholder="Poids / Taille">
+        <textarea placeholder="Blessures / Infos"></textarea>
+
+        <button type="submit">Envoyer</button>
+    </form>
+</div>
+
 <!-- RESULTATS -->
 <div id="resultats" class="page">
     <h1>Résultats</h1>
-    <p>Transformations clients bientôt disponibles</p>
 </div>
 
-<script> 
+<script>
+// NAVIGATION
 function showPage(pageId) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById(pageId).classList.add('active');
 }
 
+// OFFRE → FORM
 function goForm() {
     showPage('formulaire');
+}
+
+// EMAIL
 document.getElementById("coachingForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -232,7 +181,7 @@ Blessures: ${blessures}
     `;
 
     window.location.href =
-    `mailto:TONEMAIL@gmail.com?subject=Coaching Ghost&body=${encodeURIComponent(body)}`;
+    `mailto:TONEMAIL@gmail.com?subject=Demande Coaching&body=${encodeURIComponent(body)}`;
 });
 </script>
 
